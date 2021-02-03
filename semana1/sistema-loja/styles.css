@@ -1,0 +1,164 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body{
+    background-image: url(img/fundo.jpg);
+    background-size: cover;
+    text-align: center;
+    font-family: apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+button{
+    background-color: rgba(212, 130, 23, 0.767);
+    margin-top: 20px;
+    padding: 10px;
+}
+
+a{
+    text-decoration: none;
+   
+    padding: 10px;
+    background-color:#954865;
+    color: white;
+    border-radius: 5%;
+    margin-right: 5px;
+ 
+    
+}
+
+div{
+  
+    margin-bottom: 20px;
+}
+
+td{
+    border: 2px solid saddlebrown;
+    background-color:  #FEF6E2;
+
+}
+
+h1{
+    text-align: center;
+    margin: 20px;
+}
+
+h2{
+    padding: 20px;
+}
+
+table{
+display: flex;
+justify-content: center;
+margin-top: 50px;
+margin-bottom: 50px;
+}
+
+.meio{
+    padding: 201px;
+}
+
+ul{
+    list-style: none;
+    padding: 200px;
+}
+
+p{
+    margin: 60px;
+    font-size: x-large;
+}
+
+.heading{
+    background-image: url(img/4913142.jpg);
+   height: 150px;
+   width: 100%;
+   margin: auto;
+    background-position: center;
+   display: flex;
+   justify-content: space-between;
+   text-shadow: 2px 2px black;
+}
+
+.footer{
+    background-image: url(img/4913142.jpg);
+    height: 150px;
+    margin: auto;
+    width: 100%;
+    color: white;
+    text-shadow: 2px 2px black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    bottom: 0;
+
+}
+
+.midia{
+    
+    margin-right: 120px;
+}
+
+.text-heading{
+    margin-top: 120px;
+    margin-right: 120px;
+    
+}
+
+.img-conteudo{
+    background-image: url(img/play.jpg);
+    background-position: center;
+    background-size: cover;
+  
+    height: 400px;
+    width: 800px;
+
+   
+
+}
+
+.img-heading{
+    margin-left: 80px;
+
+ 
+}
+
+.conteudo{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 50px;
+    margin-top: 50px;
+   
+}
+
+.container{
+	max-width: 1200px;
+	margin-right: auto;
+    margin-left: auto;
+    background-color: #FEF6E2;
+    margin-top: 70px;
+    margin-bottom: 70px;
+  
+	
+}
+
+select {
+    width: 300px;
+    padding: 10px;
+    margin-bottom: 50px;
+}
+
+form{
+    margin: auto;
+
+}
+ .btn{
+    text-decoration: none;
+   
+    padding: 2px;
+    background-color:#954865;
+    color: white;
+    border-radius: 5%;
+    margin-right: 5px;
+ }
