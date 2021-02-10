@@ -1,0 +1,125 @@
+body {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+div {
+    border: 1px solid black;
+}
+
+.header{
+    height: 10vh;
+    background-color: red;
+}
+
+#first-block {
+    background-color: teal;
+    display: grid;
+    height: 20vh;
+    grid: column;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    padding: 10px;
+    grid-template-rows:repeat(4,1fr) 
+    
+}
+
+#first-block div{
+    height: 10vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+#second-block {
+    background-color: red;
+    display: grid;
+    height: 40vh;
+    grid: column;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    background-color: orange;
+
+    color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+#second-block div{
+    background-color:black ;
+    height: 40vh;  
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+#third-block {
+    background-color: red;
+    display: grid;
+    height: 10vh;
+    grid: column;
+    grid-template-columns: repeat(3, 1fr);
+    row-gap: 5px;
+    column-gap: 5px;
+    
+}
+
+#third-block div{
+    border: 1px solid black;
+    height: 10vh;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+}
+
+.blue-block {
+    background-color: blue;
+}
+
+.yellow-block {
+    background-color: yellow;
+}
+
+.green-block {
+    background-color: green;
+}
+
+.black-block {
+    background-color: black;
+    color: white;
+}
+
+.white-block {
+    background-color: white;
+}
+
+@media screen and (min-width:320px) and (max-width:420px){
+    #first-block, #second-block, #third-block {
+        display: flex;
+        flex-direction: column;
+    }
+   
+
+ }
+
+ @media screen and (min-width : 421px) and (max-width : 800px) {
+        
+       #first-block{
+        
+            grid-template-columns: repeat(2, 1fr);
+            
+       }
+
+       #first-block:nth-child(1), #first-block:nth-child(2), #first-block:nth-child(4), #first-block:nth-child(5){
+            grid-row: 1 /span 2;
+            
+       }
+
+       #first-block:nth-child(3), #first-block:nth-child(6){
+        grid-column: 1 / -1;
+    }
+    }
