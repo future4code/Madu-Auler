@@ -1,0 +1,89 @@
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+header{
+    background-color: tomato;
+    display: flex;
+    justify-content: space-between;
+    height: 60px;
+    align-items: center;
+    font-family: Arial, Helvetica, sans-serif;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    
+}
+
+a{
+    text-decoration: none;
+    color: gray;
+    border: 2px solid gray;
+}
+
+.buscar{
+    background-color: white;
+    color: lightgray;
+    margin-right: 60px;
+    height: 20px;
+    width: 100px;
+   border: 1px solid lightgray;
+   border-radius: 5%;
+}
+
+.logo{
+    margin-left: 60px;
+
+}
+
+.main-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+    margin: 60px;
+    max-width: 1250px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+
+.card{
+    width: 25%;
+    -webkit-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    box-shadow: 0px 0px 28px 0px rgba(0,0,0,0.75);
+    margin-bottom: 4px;
+
+}
+
+
+footer{
+    height: 60px;
+    background-color: tomato;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    color:gray;
+
+}
+
+.pcard{
+   
+    padding: 10px;
+    background-color: tomato;
+}
+
+.main-container{
+    height: 100vh;
+}
+
+.main-video{
+   text-align: center;
+    height: 717px;
+    margin-top: 100px;
+}
+
+video{
+    height: 400px;
+}
