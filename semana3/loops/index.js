@@ -60,3 +60,5 @@ for(let i = 0; i< arrayOriginal.length; i++){
 
 console.log("Maior Numero:", arrayOriginal[maiorNumero])
 console.log("Menor Numero:", arrayOriginal [menorNumero])
+
+//end
