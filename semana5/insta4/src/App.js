@@ -19,6 +19,7 @@ margin-bottom: 15px;
 padding: 0;
 `;
 
+
 class App extends React.Component {
   state = {
     posts: [
