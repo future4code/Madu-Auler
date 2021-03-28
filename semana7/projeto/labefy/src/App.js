@@ -1,8 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+import './AppStyledComponents.js';
 import React from 'react';
 import AddPlayList from './components/AddPlaylist'
 import PlaylistList from './components/PlaylistList'
+import styled from 'styled-components'
+import { MainContainer, Header, LittleContainer, Logo, LogoImg, Button } from './AppStyledComponents'
+import logo from './img/spotify.png'
+
+
 
 
 export default class App extends React.Component {
@@ -31,12 +35,20 @@ export default class App extends React.Component {
   }
 
   render() {
+
     return (
-      <div className="App">
-        <h1>Labefy</h1>
-        <button onClick={this.changePage}>Trocar de página</button>
-        {this.renderPage()}
-      </div>
+      <MainContainer>
+        <Header>
+          <Logo><LogoImg src={logo}></LogoImg></Logo>
+          <LittleContainer>
+            <h1>Labefy</h1>
+            <Button onClick={this.changePage}>Trocar de página</Button>
+            {this.renderPage()}
+          </LittleContainer>
+        </Header>
+      </MainContainer>
+
     )
   }
+
 }

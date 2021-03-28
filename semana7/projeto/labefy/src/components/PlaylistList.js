@@ -48,7 +48,6 @@ export default class PlaylistList extends React.Component {
                 <div key={playlist.id}>
                     <p>{playlist.name}</p>
                     <button onClick={() => this.deletePlaylist(playlist.id)}>Deletar</button>
-                    <hr />
                 </div>
             );
         });

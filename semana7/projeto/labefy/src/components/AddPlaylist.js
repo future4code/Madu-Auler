@@ -1,6 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { axiosConfig, baseUrl } from "../parameters";
+import { ButtonDC, Input } from "../AppStyledComponents"
 
 export default class AddPlayList extends React.Component {
 
@@ -34,12 +35,12 @@ export default class AddPlayList extends React.Component {
         return (
             <div>
                 <h2>Criar Playlist</h2>
-                <input
+                <Input
                     onChange={this.handleName}
                     value={this.state.name}
                     placeholder="Nome"
                 />
-                <button onClick={this.createPlaylist}>Criar</button>
+                <ButtonDC onClick={this.createPlaylist}>Criar</ButtonDC>
             </div>
         )
     }
