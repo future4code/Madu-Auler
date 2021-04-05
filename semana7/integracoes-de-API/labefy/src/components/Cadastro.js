@@ -1,18 +1,17 @@
 import React from "react";
 import axios from "axios";
 import styled from "styled-components";
+import { axiosConfig, baseUrl } from "./parametros";
+import App from "../App"
+
 
 
 export default class Cadastro extends React.Component {
     state = {
-        infos: [],
         inputNameValue: "",
         inputEmailValue: ""
     };
 
-    componentDidMount() {
-        this.getAllUsers();
-    }
 
     handleInputNameChange = (e) => {
         this.setState({ inputNameValue: e.target.value });
@@ -21,59 +20,29 @@ export default class Cadastro extends React.Component {
         this.setState({ inputEmailValue: e.target.value });
     };
 
-    getAllUsers = () => {
-        axios
-            .get(
-                "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-                {
-                    headers: {
-                        Authorization: "maria-eduarda-auler-cruz"
-                    }
-                }
-            )
-            .then((res) => {
-                this.setState({ infos: res.data })
-
-            })
-            .catch((err) => {
-                alert("ocorreu um erro")
-            });
-    };
-
     createUser = () => {
         const body = {
             name: this.state.inputNameValue,
             email: this.state.inputEmailValue
         };
+
         axios
-            .post(
-                " https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-                body,
-                {
-                    headers: {
-                        Authorization: "maria-eduarda-auler-cruz"
-                    }
-                }
-            )
+            .post(baseUrl, body, axiosConfig)
             .then((res) => {
-                this.setState({ inputNameValue: '' })
-                this.setState({ inputEmailValue: '' })
-                this.getAllUsers()
+                console.log(res);
+                alert("O usuário foi criado com sucesso!");
+                this.setState({ inputNameValue: "", inputEmailValue: "" });
             })
             .catch((err) => {
-                this.setState({ inputNameValue: '' })
-                this.setState({ inputEmailValue: '' })
-                console.log(err.response.data);
-
+                alert("Ocorreu um erro!");
+                console.log(err);
             });
     };
 
     render() {
-        const infosList = this.state.infos.map((info) => (
-            <li key={info.id}>{info.name}</li>
-        ));
         return (
-            <div className="App">
+            <div>
+                <h2>Criar Usuário</h2>
                 <input
                     placeholder={"Name"}
                     value={this.state.inputNameValue}
@@ -84,13 +53,7 @@ export default class Cadastro extends React.Component {
                     value={this.state.inputEmailValue}
                     onChange={this.handleInputEmailChange}
                 />
-                <button onClick={this.createUser}> Salvar </button>
-                {this.state.infos.length > 0 ? (
-                    <ul>{this.props.infosList}</ul>
-
-                ) : (
-                    <p>Carregando...</p>
-                )}
+                <button onClick={this.props.changepage}> Salvar </button>
             </div>
         );
     }
