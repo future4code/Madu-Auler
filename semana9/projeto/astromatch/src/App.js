@@ -3,9 +3,6 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import HomePage from './pages/HomePage'
 import Matches from './pages/Matches'
 
-
-
-
 function App() {
 
   return (
