@@ -1,14 +1,11 @@
+import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
-import React, { useState } from "react";
-import { goToSignUpPage, goToLoginPage, goToListTripsPage, goToHomePage } from "../routes/coordinator";
+import { goToLoginPage, goToHomePage, goToListTripsPage } from "../routes/coordinator";
 import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TextBox, HeadingMainPrimary, HeadingPrimary, HeadingPrimarySub } from "./styled-components"
 import logo from "../img/favicon.png"
 
-
-const LoginPage = () => {
-
-
+const SignUpPage = () => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
     const history = useHistory()
@@ -21,7 +18,7 @@ const LoginPage = () => {
         setPassword(e.target.value);
     };
 
-    const login = () => {
+    const signUp = () => {
         const body = {
             email: email,
             password: password
@@ -29,13 +26,11 @@ const LoginPage = () => {
 
         axios
             .post(
-                "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maduauler-cruz/login",
+                "https://us-central1-labenu-apis.cloudfunctions.net/labeX/maria-eduarda-auler-cruz/signup",
                 body
             )
             .then((res) => {
                 console.log(res.data);
-                window.localStorage.setItem('token', res.data.token)
-                history.push("/admin/trips/list")
             })
             .catch((err) => {
                 console.log(err);
@@ -54,11 +49,11 @@ const LoginPage = () => {
                 </Header>
                 <TextBox>
                     <HeadingPrimary>
-                        <h1>Login</h1>
+                        <h1>Sign Up</h1>
                         <input value={email} onChange={handleEmail} placeholder="E-mail" />
                         <input value={password} onChange={handlePassword} placeholder="Senha" />
-                        <button onClick={login}>Fazer login</button>
-                        <button onClick={() => goToSignUpPage(history)}>Fazer Cadastro</button>
+                        <button onClick={signUp} >Fazer login</button>
+                        <button onClick={() => goToLoginPage(history)}>Voltar para Login</button>
                     </HeadingPrimary>
 
                 </TextBox>
@@ -68,4 +63,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default SignUpPage
