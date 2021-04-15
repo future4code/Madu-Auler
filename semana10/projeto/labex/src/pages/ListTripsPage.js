@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { goToApplicationFormPage, goToLoginPage, goToListTripsPage, goToHomePage } from "../routes/coordinator";
-import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TripContainer, Trips } from "./styled-components"
+import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TripContainer, Trips, Buttons } from "./styled-components"
 import logo from "../img/favicon.png"
 
 const ListTripsPage = () => {
@@ -32,9 +32,9 @@ const ListTripsPage = () => {
             <Banner>
                 <Header>
                     <Container>
-                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Area Administrativa</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Administrative Area</ButtonHeader></div>
                         <LogoButton onClick={() => goToHomePage(history)}><Logobox><Logo src={logo}></Logo></Logobox></LogoButton>
-                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Lista de Viagens</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Travel List</ButtonHeader></div>
                     </Container>
                 </Header>
 
@@ -52,7 +52,7 @@ const ListTripsPage = () => {
                                     <p>Planet: {trip.planet}</p>
                                     <p>Duration in days: {trip.durationInDays}</p>
                                     <p>Date: {trip.date}</p>
-                                    <button onClick={() => goToApplicationFormPage(history)}>Application Form</button>
+                                    <Buttons onClick={() => goToApplicationFormPage(history)}>Application Form</Buttons>
 
                                 </Trips>
                             )

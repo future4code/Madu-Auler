@@ -2,7 +2,7 @@ import axios from "axios";
 import { useHistory } from "react-router-dom";
 import React, { useState } from "react";
 import { goToSignUpPage, goToLoginPage, goToListTripsPage, goToHomePage } from "../routes/coordinator";
-import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TextBox, HeadingMainPrimary, HeadingPrimary, HeadingPrimarySub } from "./styled-components"
+import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TextBox, Inputs, HeadingPrimary, Buttons } from "./styled-components"
 import logo from "../img/favicon.png"
 
 
@@ -47,18 +47,18 @@ const LoginPage = () => {
             <Banner>
                 <Header>
                     <Container>
-                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Area Administrativa</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Administrative Area</ButtonHeader></div>
                         <LogoButton onClick={() => goToHomePage(history)}><Logobox><Logo src={logo}></Logo></Logobox></LogoButton>
-                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Lista de Viagens</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Travel List</ButtonHeader></div>
                     </Container>
                 </Header>
                 <TextBox>
                     <HeadingPrimary>
                         <h1>Login</h1>
-                        <input value={email} onChange={handleEmail} placeholder="E-mail" />
-                        <input value={password} onChange={handlePassword} placeholder="Senha" />
-                        <button onClick={login}>Fazer login</button>
-                        <button onClick={() => goToSignUpPage(history)}>Fazer Cadastro</button>
+                        <Inputs value={email} onChange={handleEmail} placeholder="E-mail" />
+                        <Inputs value={password} onChange={handlePassword} placeholder="Senha" />
+                        <Buttons onClick={login}>Login</Buttons>
+                        <Buttons onClick={() => goToSignUpPage(history)}>Sign Up</Buttons>
                     </HeadingPrimary>
 
                 </TextBox>

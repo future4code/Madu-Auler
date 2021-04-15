@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 import { useHistory } from "react-router-dom";
 import { goToLoginPage, goToHomePage, goToListTripsPage } from "../routes/coordinator";
-import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TextBox, HeadingMainPrimary, HeadingPrimary, HeadingPrimarySub } from "./styled-components"
+import { Header, Container, Banner, Logo, Logobox, LogoButton, ButtonHeader, TextBox, HeadingPrimary, Buttons, Inputs } from "./styled-components"
 import logo from "../img/favicon.png"
 
 const SignUpPage = () => {
@@ -42,18 +42,18 @@ const SignUpPage = () => {
             <Banner>
                 <Header>
                     <Container>
-                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Area Administrativa</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToLoginPage(history)}>Administrative Area</ButtonHeader></div>
                         <LogoButton onClick={() => goToHomePage(history)}><Logobox><Logo src={logo}></Logo></Logobox></LogoButton>
-                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Lista de Viagens</ButtonHeader></div>
+                        <div><ButtonHeader onClick={() => goToListTripsPage(history)}>Travel List</ButtonHeader></div>
                     </Container>
                 </Header>
                 <TextBox>
                     <HeadingPrimary>
                         <h1>Sign Up</h1>
-                        <input value={email} onChange={handleEmail} placeholder="E-mail" />
-                        <input value={password} onChange={handlePassword} placeholder="Senha" />
-                        <button onClick={signUp} >Fazer login</button>
-                        <button onClick={() => goToLoginPage(history)}>Voltar para Login</button>
+                        <Inputs value={email} onChange={handleEmail} placeholder="E-mail" />
+                        <Inputs value={password} onChange={handlePassword} placeholder="Senha" />
+                        <Buttons onClick={signUp} >Fazer login</Buttons>
+                        <Buttons onClick={() => goToLoginPage(history)}>Voltar para Login</Buttons>
                     </HeadingPrimary>
 
                 </TextBox>

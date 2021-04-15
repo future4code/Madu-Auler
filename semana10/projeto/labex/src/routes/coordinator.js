@@ -18,8 +18,8 @@ export const goToApplicationFormPage = (history) => {
     history.push("/trips/application")
 }
 
-export const goToTripDetailsPage = (history) => {
-    history.push("/admin/trips/:id")
+export const goToTripDetailsPage = (history, id) => {
+    history.push(`/admin/trips/${id}`)
 }
 
 export const goToCreateTripPage = (history) => {

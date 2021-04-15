@@ -170,5 +170,19 @@ height:25%;
 width:25%;
 color: white;
 `
-
+export const Inputs = styled.input`
+padding: 10px;
+border: none;
+margin: 10px;
+`
+export const Buttons = styled.button`
+color: gray;
+padding: 10px;
+border: none;
+border-radius:5%;
+margin:10px;
+&:hover{
+  cursor: pointer;
+}
+`
 
