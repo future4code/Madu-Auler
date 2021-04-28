@@ -19,12 +19,12 @@ const Router = ({ setRightButtonText }) => {
             <Route exact path="/feed">
                 <FeedPage />
             </Route>
-            <Route exact page="/post/:id">
+            <Route exact path="/post/:id">
                 <PostPage />
             </Route>
-            <Router>
+            <Route>
                 <div>Error</div>
-            </Router>
+            </Route>
         </Switch>
 
     )
