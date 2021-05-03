@@ -22,9 +22,7 @@ const Router = ({ setRightButtonText }) => {
             <Route exact path="/post/:id">
                 <PostPage />
             </Route>
-            <Route>
-                <div>Error</div>
-            </Route>
+
         </Switch>
 
     )

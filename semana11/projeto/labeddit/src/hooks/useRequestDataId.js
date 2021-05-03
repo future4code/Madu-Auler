@@ -3,6 +3,7 @@ import axios from 'axios'
 
 const useRequestDataId = (initialData, url) => {
     const [data, setData] = useState(initialData);
+    const [postComments, setPostComments] = useState([]);
 
     useEffect(() => {
         axios
@@ -13,6 +14,8 @@ const useRequestDataId = (initialData, url) => {
             })
             .then((res) => {
                 setData(res.data.post);
+                setPostComments(res.data.post.comments);
+
             })
             .catch((err) => {
                 console.log(err);
